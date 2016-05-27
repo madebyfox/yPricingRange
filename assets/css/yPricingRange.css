@@ -1,0 +1,265 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #434343;
+}
+body:before {
+	content: '';
+	position: absolute;
+	background: url('../images/photo-1427464407917-c817c9a0a6f6.jpg') center center;
+	background-size: auto 150%;
+	right: 0;top: 0;left: 0;bottom: 0;
+	margin: auto;
+	opacity: .5;
+	z-index: -1;
+}
+section {
+	width: 100%;
+	padding: 60px 0;
+	margin: 0 auto;
+}
+section .wrap {
+	width: 100%;
+	max-width: 980px;
+	margin: auto;
+}
+
+.RangeSlider {
+	background: rgba(255,255,255,.8);
+}
+.RangeSlider h2 {
+	font-size: 48px;
+	text-align: center;
+}
+.RangeSlider .slider {
+	width: 50%;
+	margin: auto;
+}
+.RangeSlider .slider input[type=range]:before,
+.RangeSlider .slider input[type=range]:after {
+	background: #fff;
+	width: 40px;
+	text-align: center;
+	display: inline-block;
+	padding: 10px 0;
+	margin: 0 10px;
+	border-radius: 4px;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,.1), 0 0 0 0px rgba(170, 170, 255,1) inset;
+	transition: .3s ease;
+}
+.RangeSlider .slider input[type=range]:hover:before,
+.RangeSlider .slider input[type=range]:hover:after {
+	color: #fff;
+}
+.RangeSlider .slider input[type=range]:hover:before {
+	box-shadow: 0 0 6px 0 rgba(0,0,0,.1), -40px 0 0 0px rgba(170, 170, 255,1) inset;
+}
+.RangeSlider .slider input[type=range]:hover:after {
+	box-shadow: 0 0 6px 0 rgba(0,0,0,.1), 40px 0 0 0px rgba(170, 170, 255,1) inset;
+}
+.RangeSlider .slider input[type=range]:before {
+	content: attr(min);
+}
+.RangeSlider .slider input[type=range]:after {
+	content: attr(max);
+}
+.RangeSlider .slider input[type=range] {
+	background: none;
+    width: 100%;
+	padding: 0;
+    margin: 0 auto;
+	border: none;
+    -webkit-appearance: none;
+}
+.RangeSlider .slider input[type=range]::-webkit-slider-runnable-track {
+    background: #aaf;
+    width: 100%;
+    height: 12px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+}
+.RangeSlider .slider input[type=range]:hover::-webkit-slider-runnable-track {
+    background: #fff;
+	box-shadow: 0 0 6px rgba(0,0,0,.1);
+	transition: .3s ease;
+}
+.RangeSlider .slider input[type=range]::-webkit-slider-thumb {
+    background: #aaf;
+    height: 24px;
+    width: 24px;
+    margin-top: -6px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+	box-shadow: 0 0 0 0px #aaf, 0px 0px 5px rgba(0, 0, 0, .3);
+	transition: .12s ease;
+    -webkit-appearance: none;
+}
+.RangeSlider .slider input[type=range]:hover::-webkit-slider-thumb {
+	background: #99f;
+	border: 0px solid #99f;
+	box-shadow: 0 0 0 8px #99f, 0px 0px 10px 10px rgba(0, 0, 0, .12);
+}
+.RangeSlider .slider input[type=range]::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+.RangeSlider .slider input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #555a68;
+    border: 6px solid #e6e6e8;
+    margin-top: -8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+}
+.RangeSlider .slider input[type=range]:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+.RangeSlider .slider input[type=range]::-ms-track {
+    width: 300px;
+    height: 5px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 6px 0;
+    color: transparent;
+}
+.RangeSlider .slider input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+.RangeSlider .slider input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+.RangeSlider .slider input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #555a68;
+    border: 6px solid #e6e6e8;
+    margin-top: -8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+}
+.RangeSlider .label {
+	padding: 10px 0;
+	text-align: center;
+}
+.RangeSlider .label input {
+	background: transparent;
+	width: auto;
+	color: #aaf;
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+}
+
+.PricingTable {
+	width: 100%;
+	display: flex;
+}
+.PricingTable .anColumn {
+	width: 33.33333333333333%;
+	border-radius: 4px;
+	/*box-shadow: 0px 4px 6px 0px rgba(0,0,0,.05);*/
+	flex: 1 1 auto;
+	transition: .12s ease;
+}
+.PricingTable .anColumn:hover {
+	/*box-shadow: 0px 0px 12px 0px rgba(0,0,0,.1);*/
+	transform: scale(1.1);
+}
+.PricingTable .anColumn:nth-child(3n+2) {
+	margin: 0 40px;
+}
+.PricingTable h3 {
+	font-size: 32px;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	text-shadow: 0 0 8px rgba(0,0,0,.1)
+}
+.PricingTable #PlanBronze h3 {
+	background: #CD7F32;
+}
+.PricingTable #PlanSilver h3 {
+	background: #c0c0c0;
+}
+.PricingTable #PlanGold h3 {
+	background: #ffd700;
+}
+.PricingTable ul li {
+	background: #fff;
+	text-align: center;
+	padding: 10px;
+}
+.PricingTable ul li .packPrice:before {
+	content: '$ ';
+	font-size: 18px;
+	font-weight: normal;
+}
+.PricingTable ul li .packPrice {
+	font-size: 24px;
+	font-weight: 800;
+}
+.PricingTable ul li .unitPrice:before {
+	content: '$ ';
+	font-size: 12px;
+	font-weight: lighter;
+}
+.PricingTable ul li .unitPrice {
+	font-size: 16px;
+	font-weight: lighter;
+}
+.PricingTable ul li.cta {
+	background: transparent;
+	padding: 0;
+}
+.PricingTable ul li.cta a {
+	background: lawngreen;
+	width: 100%;
+	color: #fff;
+	padding: 15px;
+	display: inline-block;
+	box-sizing: border-box;
+}
+.PricingTable ul li:nth-child(2n+1) {
+	background: #eee;
+}
+
+@media screen and (max-width: 480px) {
+	.RangeSlider .slider {
+		width: 100%;
+	}
+	.PricingTable {
+		display: block;
+	}
+	.PricingTable .anColumn {
+		width: 90%;
+		margin: 0 auto 40px !important;
+	}	
+}

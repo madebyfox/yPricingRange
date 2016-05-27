@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>yPricingRange</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/yPricingRange.css">
+</head>
+<body>
+	<section class="RangeSlider">
+		<div class="wrap">
+			<h2>How many licenses you need?</h2>
+			<div class="label">
+				<input type="number" id="PriceFinal" value="50" min="1" max="100">
+			</div>
+			<div class="slider">
+				<input type="range" id="PriceRange" value="50" min="1" max="100">
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="wrap">
+			<div class="serviceCompare PricingTable">
+				<div id="PlanBronze" class="anColumn">
+					<h3 class="PlanTitle">Bronze</h3>
+					<ul>
+						<li>1 object</li>
+						<li>3 objects</li>
+						<li>Supports Comercial Work Time</li>
+						<li><div class="packPrice"><span id="PriceTotalBronze"></span></div><div class="unitPrice"><span id="PriceUnitBronze">5</span>/un</div>
+						<li class="cta"><a href="" class="cta">Buy now!</a></li>
+					</ul>
+				</div>
+				<div id="PlanSilver" class="anColumn">
+					<h3 class="PlanTitle">Silver</h3>
+					<ul>
+						<li>3 object</li>
+						<li>8 objects</li>
+						<li>Supports Comercial Work Time + Weekends</li>
+						<li><div class="packPrice"><span id="PriceTotalSilver"></span></div><div class="unitPrice"><span id="PriceUnitSilver">10</span>/un</div>
+						<li class="cta"><a href="" class="cta">Buy now!</a></li>
+					</ul>
+				</div>
+				<div id="PlanGold" class="anColumn">
+					<h3 class="PlanTitle">Gold</h3>
+					<ul>
+						<li>5 object</li>
+						<li>15 objects</li>
+						<li>24/7 Support</li>
+						<li><div class="packPrice"><span id="PriceTotalGold"></span></div><div class="unitPrice"><span id="PriceUnitGold">20</span>/un</div>
+						<li class="cta"><a href="" class="cta">Buy now!</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/yPricingRange.js"></script>
+</body>
+</html>
