@@ -1,6 +1,7 @@
 window.onload = function() {
 	var rangeSlider = document.getElementById("PriceRange"),
 		unit = document.getElementById("PriceFinal"),
+		unitValue =  document.getElementById("PriceFinal").value,
 		unitAdd = document.getElementById("addValue"),
 		unitRemove = document.getElementById("removeValue"),
 		tpBronze = document.getElementById("PriceTotalBronze"),
@@ -9,9 +10,8 @@ window.onload = function() {
 		upSilver = document.getElementById("PriceUnitSilver"),
 		tpGold = document.getElementById("PriceTotalGold"),
 		upGold = document.getElementById("PriceUnitGold");
-		
-	var	FinalValueNumber =  unit.value;
-	updateTotalFinal(FinalValueNumber);
+
+	updateTotalFinal(unitValue);
 				
 	unit.addEventListener("input", function() {
 		rangeSlider.value = unit.value;
@@ -28,28 +28,36 @@ window.onload = function() {
 		unit.value = addValue;
 		rangeSlider.value = addValue;
 		generalUpdate();
-	});
+	}, false);
 	unitRemove.addEventListener("click", function() {
-		var addValue = parseInt(unit.value) - 1;
-		unit.value = addValue;
-		rangeSlider.value = addValue;
+		var removeValue = parseInt(unit.value) - 1;
+		unit.value = removeValue;
+		rangeSlider.value = removeValue;
 		generalUpdate();
-	});
+	}, false);
 
 	function generalUpdate() {
-		var FinalValue = rangeSlider.value;
-		var FinalValueNumber = unit.value;
-		updateTotalFinal(FinalValueNumber);
-		if(unit.value >= 100) {
+		var FinalValue = rangeSlider.value,
+			unitValue = unit.value;
+		
+		if(unit.value >= parseInt(unit.max)) {
 			unit.value = unit.max;
+			unitValue = unit.max;
+			updateTotalFinal(unitValue);
 		}
-		if(unit.value <= 0) {
+		if(unit.value <= parseInt(unit.min)) {
 			unit.value = unit.min;
+			unitValue = unit.min;
+			updateTotalFinal(unitValue);
+		} else {
+			updateTotalFinal(unitValue);			
 		}
+
+		// updateTotalFinal(unitValue);
 	}
-	function updateTotalFinal(FinalValueNumber) {
-		tpBronze.innerHTML = Math.round(FinalValueNumber * upBronze.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		tpSilver.innerHTML = Math.round(FinalValueNumber * upSilver.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		tpGold.innerHTML = Math.round(FinalValueNumber * upGold.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	function updateTotalFinal(unitValue) {
+		tpBronze.innerHTML = Math.round(unitValue * upBronze.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		tpSilver.innerHTML = Math.round(unitValue * upSilver.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		tpGold.innerHTML = Math.round(unitValue * upGold.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 	}
 }

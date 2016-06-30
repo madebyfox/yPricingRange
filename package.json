@@ -1,0 +1,29 @@
+{
+  "name": "ypricingrange",
+  "version": "1.0.0",
+  "description": "Barra deslizante de valores com tabelas de preços dinâmica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygorch/yPricingRange.git"
+  },
+  "keywords": [
+    "slider",
+    "range",
+    "pricing-table",
+    "table",
+    "pricing"
+  ],
+  "author": "Ygor Chaves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ygorch/yPricingRange/issues"
+  },
+  "homepage": "https://github.com/ygorch/yPricingRange#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
