@@ -7,6 +7,13 @@
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+::-moz-selection {
+  background: rgba(0,0,0,.1);
+}
+
+::selection {
+  background: rgba(0,0,0,.1);
+} 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	/* display: none; <- Crashes Chrome on hover */
@@ -62,13 +69,17 @@ section .wrap {
 	transition: .3s ease;
 }
 .RangeSlider .slider input[type=range]:hover:before,
-.RangeSlider .slider input[type=range]:hover:after {
+.RangeSlider .slider input[type=range]:hover:after,
+.RangeSlider .slider input[type=range]:focus:before,
+.RangeSlider .slider input[type=range]:focus:after {
 	color: #fff;
 }
-.RangeSlider .slider input[type=range]:hover:before {
+.RangeSlider .slider input[type=range]:hover:before,
+.RangeSlider .slider input[type=range]:focus:before {
 	box-shadow: 0 0 6px 0 rgba(0,0,0,.1), -40px 0 0 0px rgba(170, 170, 255,1) inset;
 }
-.RangeSlider .slider input[type=range]:hover:after {
+.RangeSlider .slider input[type=range]:hover:after,
+.RangeSlider .slider input[type=range]:focus:after {
 	box-shadow: 0 0 6px 0 rgba(0,0,0,.1), 40px 0 0 0px rgba(170, 170, 255,1) inset;
 }
 .RangeSlider .slider input[type=range]:before {
@@ -93,7 +104,8 @@ section .wrap {
     border: none;
     border-radius: 4px;
 }
-.RangeSlider .slider input[type=range]:hover::-webkit-slider-runnable-track {
+.RangeSlider .slider input[type=range]:hover::-webkit-slider-runnable-track,
+.RangeSlider .slider input[type=range]:focus::-webkit-slider-runnable-track {
     background: #fff;
 	box-shadow: 0 0 6px rgba(0,0,0,.1);
 	transition: .3s ease;
@@ -109,7 +121,8 @@ section .wrap {
 	transition: .12s ease;
     -webkit-appearance: none;
 }
-.RangeSlider .slider input[type=range]:hover::-webkit-slider-thumb {
+.RangeSlider .slider input[type=range]:hover::-webkit-slider-thumb,
+.RangeSlider .slider input[type=range]:focus::-webkit-slider-thumb {
 	background: #99f;
 	border: 0px solid #99f;
 	box-shadow: 0 0 0 8px #99f, 0px 0px 10px 10px rgba(0, 0, 0, .12);
@@ -167,14 +180,33 @@ section .wrap {
 	padding: 10px 0;
 	text-align: center;
 }
-.RangeSlider .label input {
+.RangeSlider .label input[type=number] {
 	background: transparent;
-	width: auto;
+	width: 80px;
 	color: #aaf;
-	font-size: 48px;
+	font-size: 36px;
 	font-weight: bold;
 	text-align: center;
-	margin: auto;
+	margin: 0 24px;
+	padding: 12px 0;
+	border-radius: 4px;
+	transition: .12s ease;
+}
+.RangeSlider .label input[type=number]:hover {
+	background: rgba(0,0,0,.05);
+	transition: .12s ease;
+}
+.RangeSlider .label input[type=number]:focus {
+	background: #99f;
+	color: #fff;
+	transform: scale(1.2);
+	transition: .12s ease;
+	box-shadow: 0 0 0 5px rgba(255,255,255,.3) inset;
+}
+
+.RangeSlider .label input[type=number]::selection {
+	background: transparent;
+	cursor: not-allowed;
 }
 .RangeSlider .label input[type=button] {
 	background: #99f;
@@ -189,7 +221,8 @@ section .wrap {
 	text-align: center;
 	box-shadow: 0 0 0 0 rgba(255,255,255,.3) inset;
 }
-.RangeSlider .label input[type=button]:hover {
+.RangeSlider .label input[type=button]:hover,
+.RangeSlider .label input[type=button]:focus {
 	transform: scale(1.2);
 	transition: .12s ease;
 	box-shadow: 0 0 0 5px rgba(255,255,255,.3) inset;
@@ -211,7 +244,8 @@ section .wrap {
 	flex: 1 1 auto;
 	transition: .12s ease;
 }
-.PricingTable .anColumn:hover {
+.PricingTable .anColumn:hover,
+.PricingTable .anColumn:focus {
 	/*box-shadow: 0px 0px 12px 0px rgba(0,0,0,.1);*/
 	transform: scale(1.1);
 }
