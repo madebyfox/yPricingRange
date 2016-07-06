@@ -56,8 +56,8 @@ window.onload = function() {
 		// updateTotalFinal(unitValue);
 	}
 	function updateTotalFinal(unitValue) {
-		tpBronze.innerHTML = Math.round(unitValue * upBronze.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		tpSilver.innerHTML = Math.round(unitValue * upSilver.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		tpGold.innerHTML = Math.round(unitValue * upGold.innerHTML).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		tpBronze.innerHTML = (unitValue * upBronze.innerHTML).toFixed(2).replace(".00", "").replace(".", ",");
+		tpSilver.innerHTML = (unitValue * upSilver.innerHTML).toFixed(2).replace(".00", "").replace(".", ",");
+		tpGold.innerHTML = (unitValue * upGold.innerHTML).toFixed(2).replace(".00", "").replace(".", ",");
 	}
 }
